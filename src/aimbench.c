@@ -1273,7 +1273,7 @@ int aimbench_testcase_num_rtns_1()
       * are fed to these routines.
       */
 {
-	int n, i64 = 32, itemp1;
+	int n, i64 = 4, itemp1;
 	double d1, d2, dtemp1;
 
 	COUNT_START;
@@ -1403,7 +1403,7 @@ int aimbench_testcase_trig_rtns()
       * to global variables.
       */
 {
-	int n, i64 = 64;
+	int n, i64 = 4;
 
 	COUNT_START;
 	/*
@@ -1477,7 +1477,7 @@ int aimbench_testcase_matrix_rtns()
       * Rendering routine
       */
 {
-	int n, i64 = 32, i, j, k;
+	int n, i64 = 4, i, j, k;
 	double prod;
 	double v1[M_SIZE], v2[M_SIZE][M_SIZE], v3[M_SIZE];
 
@@ -1613,7 +1613,7 @@ int aimbench_testcase_array_rtns()
       * Solution to linear system of equations
       */
 {
-	int n, i64 = 32, high, j, k, wide;
+	int n, i64 = 4, high, j, k, wide;
 	static double a[A_SIZE], a_orig[A_SIZE], val, results[A_HEIGHT];	/* arguments, results */
 
 	COUNT_START;
@@ -1663,7 +1663,7 @@ int aimbench_testcase_array_rtns()
 
 int aimbench_testcase_mem_rtns_1()
 {
-	int n, i64 = 1, i, j;
+	int n, i64 = 4, i, j;
 	char *p;
 	char *array[MAXSTRINGS * 3];	/* allocate alot of strings */
 	static int malloc_size[] = {	/* table of sizes, roughly real world representative */
@@ -1695,9 +1695,9 @@ int aimbench_testcase_mem_rtns_1()
 			array[j] = malloc(strlen(str) + 1);
 			strcpy(array[j], str);
 			count += strlen(array[j++]) + 1;	/* add its length to count */
-			array[j++] = malloc(128 * malloc_size[i % Members(malloc_size)]);	/* allocate a block */
+			array[j++] = malloc(256 * malloc_size[i % Members(malloc_size)]);	/* allocate a block */
 			count += malloc_size[i % Members(malloc_size)];	/* update counter */
-			array[j++] = calloc(128 * malloc_size[(i + 1) % Members(malloc_size)], 1);	/* allocate a zeroed block */
+			array[j++] = calloc(256 * malloc_size[(i + 1) % Members(malloc_size)], 1);	/* allocate a zeroed block */
 			count += malloc_size[(i + 1) % Members(malloc_size)];	/* update counter */
 		}
 		/*
@@ -1730,7 +1730,7 @@ int aimbench_testcase_mem_rtns_1()
 
 int aimbench_testcase_mem_rtns_2()
 {
-	int n, i64 = 32, i, off1, off2, size;
+	int n, i64 = 4, i, off1, off2, size;
 	static int op_size[] = {
 		1, 3, 5, 7, 9,
 		11, 33, 65, 129, 1024,
@@ -1804,7 +1804,7 @@ int aimbench_testcase_series_1()
  */
 {
 	int
-	  n, i64 = 32;
+	  n, i64 = 4;
 	double
 	  i, d0,			/* original x for sin(x) */
 	  d1,				/* x for sin(x), changed during calc */
@@ -1881,8 +1881,7 @@ static char
 /* Copy data to and from ram at different offsets.  Assume memory alignments between 0 and sizeof(double) */
 int aimbench_testcase_ram_copy()
 {
-	int n, i64 = 32;
-
+	int n, i64 = 4;
 
 	for (n = 0; n < i64; n++) {
 		void			/* vary offsets with each call */
