@@ -39,11 +39,9 @@ struct unienv {
 };
 typedef struct unienv *unienv_t;
 
-#define ALLOCATOR_VIRTUAL_POOL_SIZE ((1 << seL4_PageBits) * 100)
-
-#define ALLOCATOR_STATIC_POOL_SIZE ((1 << seL4_PageBits) * 20)
-
-#define BRK_VIRTUAL_DEFAULT_SIZE ((1 << seL4_PageBits) * 100)
+#define ALLOCATOR_VIRTUAL_POOL_SIZE ((1ul << (seL4_PageBits + 20)))
+#define ALLOCATOR_STATIC_POOL_SIZE ((1ul << seL4_PageBits) * 200)
+#define BRK_VIRTUAL_DEFAULT_SIZE ((1ul << (seL4_PageBits + 15)))
 
 struct unienv env;
 static sel4utils_alloc_data_t data;
