@@ -1,5 +1,5 @@
 # CapBuddy unitests executing framework based on sel4test
-The aim of this project is to provide a executing framework for all testing programs that employ CapBuddy, and are implemented with seL4 LibOS. We refer to the build method of apps in sel4test and use the utils in seL4_Libs to set up the overall working framework for this project.
+The aim of this project is to provide a executing framework for all testing programs that employ CapBuddy, and are implemented with seL4 LibOS. We refer to the build method of **apps** in [sel4test](https://github.com/seL4/sel4test) and use the utils in CapBuddy related [seL4_Libs](https://github.com/ZGwtao/seL4_libs-vbtalloc-extension) to set up the overall working framework for this project.
 
 *System requirements:*
 **This project will use utils from seL4_Libs, thus, following requirements should be meet.**
