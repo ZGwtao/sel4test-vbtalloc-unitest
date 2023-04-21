@@ -1,0 +1,3 @@
+[submodule "src/sel4test-vbtalloc-MURbench"]
+	path = src/sel4test-vbtalloc-MURbench
+	url = https://github.com/lilinhan12/benchmark_test.git

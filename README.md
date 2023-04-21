@@ -9,3 +9,14 @@ When building a project with the support of CapBuddy in libsel4allocman and libs
 * -DKernelRetypeFanOutLimit=1024 (4M -> pre-allocation 1024 4K)
 * -DKernelRootCNodeSizeBits=18 (or larger, just for recommendation)
 * -DLibSel4MuslcSysMorecoreBytes=0 (for libsel4muslcsys, when pager is missing, and we still want a dynamic heap)
+
+*Codebase structure:*
+* src/
+*   ├── aimbench.c  (*example POSIX layer testing program => part of aimbench*)
+*   ├── aimbench.h  (*aimbench's header file*)
+*   ├── main.c      (*entry of sel4test-vbtalloc testbench framework*)
+*   ├── sel4test-vbtalloc-MURbench (*submodule => including Monte Carlo experiment and some micro-benchmarks for CapBuddy*)
+*   │   ├── README.md
+*   │   └── benchmark_test.c (*replace src/main.c to work*)
+*   ├── wrapper.c   (*wrapper function for POSIX*)
+*   └── wrapper.h   (*wrapper's header*)
