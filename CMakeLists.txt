@@ -40,7 +40,6 @@ target_link_libraries(
         sel4platsupport
         sel4muslcsys
         sel4testsupport
-        sel4vbtallocman
     PRIVATE sel4test-vbtalloc_Config
 )
 target_compile_options(sel4test-vbtalloc PRIVATE -Werror -g)
